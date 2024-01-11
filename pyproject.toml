@@ -1,9 +1,45 @@
 [build-system]
-requires = ["setuptools >= 40.6.0", "wheel"]
 build-backend = "setuptools.build_meta"
+requires = ["setuptools >= 40.6.0", "wheel"]
 
 [project]
+authors = [
+  {name = 'Stochastic Solutions Limited', email = 'info@StochasticSolutions.com'},
+]
+description = 'Test Driven Data Analysis'
+dynamic = ["version", "readme"]
+keywords = ['tdda', 'constraint', 'referencetest', 'rexpy']
+license = {file = 'License.txt'}
+name = "tdda"
 requires-python = ">=3.8"
 
+[tool.setuptool]
+install_requires = ['numpy>=1.20.3', 'pandas>=1.5.2']
+zip_safe = false
 
+[tool.setuptools.dynamic]
+readme = {file = "README.md"}
+version = {attr = "tdda.version.version"}
 
+[project.urls]
+Documentation = 'https://tdda.readthedocs.io'
+Homepage = 'http://www.stochasticsolutions.com'
+Issues = 'https://github.com/tdda/tdda/issues'
+Repository = 'https://github.com/tdda/tdda'
+Changelog = 'https://github.com/tdda/tdda/blob/master/tdda/CHANGES.py'
+
+[project.scripts]
+rexpy = 'tdda.rexpy.rexpy:main'
+tdda = 'tdda.constraints.console:main'
+
+[tool.setuptools.packages.find]
+where = ["tdda"]
+
+[tool.setuptools.package-data]
+constraints = ['tdda/constraints/testdata/examples/*']
+gentest = ['tdda/gentest/examples/*']
+referencetest = ['tdda/referencetest/examples/*', 'tdda/referencetest/tests/*']
+rexpy = ['tdda/rexpy/examples/*']
+
+[tool.setuptools.exclude-package-data]
+constraints = ['accounts1k.csv', 'accounts25k.csv']
