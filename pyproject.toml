@@ -3,6 +3,7 @@ build-backend = "setuptools.build_meta"
 requires = ["setuptools >= 40.6.0", "wheel"]
 
 [project]
+name = "tdda"
 authors = [
   {name = 'Stochastic Solutions Limited', email = 'info@StochasticSolutions.com'},
 ]
@@ -10,7 +11,6 @@ description = 'Test Driven Data Analysis'
 dynamic = ["version", "readme"]
 keywords = ['tdda', 'constraint', 'referencetest', 'rexpy']
 license = {file = 'License.txt'}
-name = "tdda"
 requires-python = ">=3.8"
 
 [tool.setuptool]
@@ -32,8 +32,8 @@ Changelog = 'https://github.com/tdda/tdda/blob/master/tdda/CHANGES.py'
 rexpy = 'tdda.rexpy.rexpy:main'
 tdda = 'tdda.constraints.console:main'
 
-[tool.setuptools.packages.find]
-where = ["tdda"]
+# [tool.setuptools.packages.find]
+# where = ["tdda"]
 
 [tool.setuptools.package-data]
 constraints = ['tdda/constraints/testdata/examples/*']
