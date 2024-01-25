@@ -1,3 +1,4 @@
 # prerequisites
 pytest
-
+# coverage
+pytest-cov

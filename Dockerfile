@@ -20,7 +20,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install --upgrade setuptools
 RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
 RUN pip3 install --no-cache-dir --upgrade -r rtdrequirements.txt
-RUN python3 setup.py install
+RUN python3 -m pip install .
 
 # Main application
 # run this one if there are problems starting the app with the line above

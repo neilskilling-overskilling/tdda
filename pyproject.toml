@@ -3,7 +3,6 @@ build-backend = "setuptools.build_meta"
 requires = ["setuptools >= 40.6.0", "wheel"]
 
 [project]
-name = "tdda"
 authors = [
   {name = 'Stochastic Solutions Limited', email = 'info@StochasticSolutions.com'},
 ]
@@ -11,35 +10,41 @@ description = 'Test Driven Data Analysis'
 dynamic = ["version", "readme"]
 keywords = ['tdda', 'constraint', 'referencetest', 'rexpy']
 license = {file = 'License.txt'}
+name = "tdda"
 requires-python = ">=3.8"
 
 [tool.setuptool]
 install_requires = ['numpy>=1.20.3', 'pandas>=1.5.2']
 zip_safe = false
+# By default, include-package-data is true in pyproject.toml, so you do
+# NOT have to specify this line.
+include-package-data = true
 
 [tool.setuptools.dynamic]
 readme = {file = "README.md"}
 version = {attr = "tdda.version.version"}
 
 [project.urls]
+Changelog = 'https://github.com/tdda/tdda/blob/master/tdda/CHANGES.py'
 Documentation = 'https://tdda.readthedocs.io'
 Homepage = 'http://www.stochasticsolutions.com'
 Issues = 'https://github.com/tdda/tdda/issues'
 Repository = 'https://github.com/tdda/tdda'
-Changelog = 'https://github.com/tdda/tdda/blob/master/tdda/CHANGES.py'
 
 [project.scripts]
 rexpy = 'tdda.rexpy.rexpy:main'
 tdda = 'tdda.constraints.console:main'
 
-# [tool.setuptools.packages.find]
-# where = ["tdda"]
+[tool.setuptools.packages.find]
+include = ["tdda", "tdda.constraints", "tdda.gentest", "tdda.referencetest", "tdda.rexpy"]
 
 [tool.setuptools.package-data]
-constraints = ['tdda/constraints/testdata/examples/*']
-gentest = ['tdda/gentest/examples/*']
-referencetest = ['tdda/referencetest/examples/*', 'tdda/referencetest/tests/*']
-rexpy = ['tdda/rexpy/examples/*']
+"tdda" = ['README.md', 'LICENSE.txt']
+"tdda.constraints" = ['testdata/*.*', 'examples/testdata/*.*']
+"tdda.gentest" = ['examples/*', 'examples/r-examples/*']
+"tdda.referencetest" = ['examples/*', 'examples/*/*/*', 'tests/testdata/*.txt']
+"tdda.rexpy" = ['examples/*.txt']
 
 [tool.setuptools.exclude-package-data]
-constraints = ['accounts1k.csv', 'accounts25k.csv']
+# TODO: This is not having the desired effect
+"tdda.constraints" = ['accounts*.csv']
