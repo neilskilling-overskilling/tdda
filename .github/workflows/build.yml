@@ -25,11 +25,16 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
+        python3 -mvenv venv 
+        . venv/bin/activate
         pip3 install --upgrade pip
         pip3 install --upgrade setuptools
         pip3 install --no-cache-dir --upgrade -r requirements.txt
         pip3 install --no-cache-dir --upgrade -r rtdrequirements.txt
         python3 -m pip install .
-    - name: Test with pytest
+        deactivate 
+    - name: Test
       run: |
+        . venv/bin/activate
         tdda test
+        deactivate

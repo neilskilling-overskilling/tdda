@@ -24,4 +24,5 @@ RUN python3 -m pip install .
 
 # Main application
 # run this one if there are problems starting the app with the line above
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["tdda", "test"]
