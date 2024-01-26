@@ -40,10 +40,11 @@ include = ["tdda", "tdda.constraints", "tdda.gentest", "tdda.referencetest", "td
 
 [tool.setuptools.package-data]
 "tdda" = ['README.md', 'LICENSE.txt']
-"tdda.constraints" = ['testdata/*.*', 'examples/testdata/*.*']
+"tdda.constraints.examples.testdata" = ['testdata/*.*', 'examples/testdata/*.*']
 "tdda.gentest" = ['examples/*', 'examples/r-examples/*']
-"tdda.referencetest" = ['examples/*', 'examples/*/*/*', 'tests/testdata/*.txt']
-"tdda.rexpy" = ['examples/*.txt']
+"tdda.referencetest.tests.testdata" = ['tests/testdata/*.txt']
+"tdda.referencetest.examples" = ['examples/*', 'examples/*/*/*', 'tests/testdata/*.txt']
+"tdda.rexpy.examples" = ['examples/*.txt']
 
 [tool.setuptools.exclude-package-data]
 # TODO: This is not having the desired effect
