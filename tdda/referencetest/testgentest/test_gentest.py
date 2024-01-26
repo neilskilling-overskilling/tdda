@@ -28,7 +28,7 @@ def set_test_attributes(t):
     t.user = USER
     t.ip = LOCALHOST
     t.homedir = HOME
-    t.start_time = datetime.datetime(2020,7,1,16,30,00)
+    t.start_time = datetime.datetime(2020,7,1,16,30,0)
     t.stop_time = datetime.datetime(2020,7,1,16,30,2)
     t.set_min_max_time()
     t.reference_files[1] = os.path.join(t.refdir, 'STDOUT')
