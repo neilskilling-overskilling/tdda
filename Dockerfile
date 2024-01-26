@@ -1,6 +1,6 @@
 # Base Dockerfile
 # syntax=docker/dockerfile:1
-FROM python:3.11
+FROM python:3.12
 # Update default packages
 RUN apt-get update
 
