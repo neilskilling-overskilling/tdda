@@ -1,0 +1,258 @@
+{
+    "creation_metadata": {
+        "local_time": "2024-01-26 16:16:09",
+        "utc_time": "2024-01-26 16:16:09",
+        "creator": "TDDA 2.0.10",
+        "source": "/Users/neil/Downloads/resultsTo2022.csv",
+        "host": "ardbeg",
+        "user": "neil",
+        "dataset": "resultsTo2022.csv",
+        "n_records": 78104,
+        "n_selected": 78104,
+        "tddafile": "results.tdda"
+    },
+    "fields": {
+        "ECRef": {
+            "type": "string",
+            "min_length": 8,
+            "max_length": 9,
+            "max_nulls": 0,
+            "no_duplicates": true,
+            "rex": [
+                "^[A-Z]{1,2}[0-9]{7}$"
+            ]
+        },
+        "RegulatedEntityName": {
+            "type": "string",
+            "min_length": 1,
+            "max_nulls": 0
+        },
+        "RegulatedEntityType": {
+            "type": "string",
+            "min_length": 11,
+            "max_length": 21,
+            "max_nulls": 0,
+            "allowed_values": [
+                "Permitted Participant",
+                "Political Party",
+                "Regulated Donee",
+                "Third Party"
+            ]
+        },
+        "Value": {
+            "type": "string",
+            "min_length": 5,
+            "max_length": 13,
+            "max_nulls": 0,
+            "rex": [
+                "^£([0-9],)?,([0-9]{3},)*[0-9]{3}\\.[0-9]{2}$"
+            ]
+        },
+        "AcceptedDate": {
+            "type": "date",
+            "min": "2001-01-01 00:00:00"
+        },
+        "AccountingUnitName": {
+            "type": "string",
+            "min_length": 1
+        },
+        "DonorName": {
+            "type": "string",
+            "min_length": 1,
+            "max_length": 69,
+            "max_nulls": 0
+        },
+        "AccountingUnitsAsCentralParty": {
+            "type": "bool",
+            "min": false,
+            "max": true,
+            "max_nulls": 0
+        },
+        "IsSponsorship": {
+            "type": "bool",
+            "min": false,
+            "max": true,
+            "max_nulls": 0
+        },
+        "DonorStatus": {
+            "type": "string",
+            "max_nulls": 0,
+            "allowed_values": [
+                "Building Society",
+                "Company",
+                "Friendly Society",
+                "Impermissible Donor",
+                "Individual",
+                "Limited Liability Partnership",
+                "N/A",
+                "Other",
+                "Public Fund",
+                "Registered Political Party",
+                "Trade Union",
+                "Trust",
+                "Unidentifiable Donor",
+                "Unincorporated Association"
+            ]
+        },
+        "RegulatedDoneeType": {
+            "type": "string",
+            "allowed_values": [
+                "AM - Member of the National Assembly for Wales",
+                "Candidate",
+                "Cllr. - Member of a Local Authority",
+                "GLA - Assembly Member (Greater London)",
+                "Leadership Candidate",
+                "MEP - Member of the European Parliament",
+                "MLA - Member of the Legislative Authority of Northern Ireland",
+                "MP - Member of Parliament",
+                "MSP - Member of the Scottish Parliament",
+                "Mayor",
+                "Member of Registered Political Party",
+                "Members Association",
+                "Other",
+                "Police and Crime Commissioner",
+                "Senedd Member"
+            ]
+        },
+        "CompanyRegistrationNumber": {
+            "type": "string",
+            "min_length": 1,
+            "max_length": 34,
+            "rex": [
+                "^[A-Z]{2}[0-9]{6}$",
+                "^[0-9]{8}$"
+            ]
+        },
+        "Postcode": {
+            "type": "string",
+            "rex": [
+                "^[A-Z]{1,2}[0-9]{1,2}[A-Z]?\\s+[0-9][A-Z]{2}$"
+            ]
+        },
+        "DonationType": {
+            "type": "string",
+            "max_nulls": 0,
+            "allowed_values": [
+                "Cash",
+                "Exempt Trust",
+                "Impermissible Donor",
+                "Non Cash",
+                "Permissible Donor Exempt Trust",
+                "Public Funds",
+                "Total value of donations not reported individually",
+                "Unidentified Donor",
+                "Visit"
+            ]
+        },
+        "NatureOfDonation": {
+            "type": "string",
+            "allowed_values": [
+                "Administration services",
+                "Advertising",
+                "Assistance for Parties (Scottish Parliament)",
+                "Auction prizes",
+                "Consultancy services",
+                "Cranborne Money (House of Lords)",
+                "Designated Organisation (Referendum)",
+                "Financial Assistance for Parties in NI Assembly",
+                "Hospitality",
+                "Loan conversion",
+                "Other",
+                "Other Payment",
+                "Policy Development Grant",
+                "Premises",
+                "Short Money (House of Commons)",
+                "Sponsorship",
+                "Staff costs",
+                "Start Up Grant (Discontinued)",
+                "Travel"
+            ]
+        },
+        "PurposeOfVisit": {
+            "type": "string"
+        },
+        "DonationAction": {
+            "type": "string",
+            "allowed_values": [
+                "Deferred",
+                "Forfeited",
+                "Returned"
+            ]
+        },
+        "ReceivedDate": {
+            "type": "string",
+            "rex" : [
+                "^[0-9]{2}/[0-9]{2}/[0-9]{4}$"
+            ]
+        },
+        "ReportedDate": {
+            "type": "date",
+            "min": "2001-02-01 00:00:00",
+            "max_nulls": 0
+        },
+        "IsReportedPrePoll": {
+            "type": "bool",
+            "min": false,
+            "max": false,
+            "sign": "zero"
+        },
+        "ReportingPeriodName": {
+            "type": "string",
+            "min_length": 7,
+            "max_length": 14,
+            "max_nulls": 0,
+            "rex": [
+                "^[A-Z][a-z]+\\s+[0-9]{4}$"
+            ]
+        },
+        "IsBequest": {
+            "type": "bool",
+            "min": false,
+            "max": true,
+            "max_nulls": 0
+        },
+        "IsAggregation": {
+            "type": "bool",
+            "min": false,
+            "max": true,
+            "max_nulls": 0
+        },
+        "RegulatedEntityId": {
+            "type": "int",
+            "min": 17,
+            "max": 15319,
+            "sign": "positive",
+            "max_nulls": 0
+        },
+        "AccountingUnitId": {
+            "type": "int",
+            "min": 1,
+            "sign": "positive"
+        },
+        "DonorId": {
+            "type": "int",
+            "min": 1,
+            "sign": "positive"
+        },
+        "CampaigningName": {
+            "type": "string",
+            "allowed_values": [
+                "EconomistsForRemain.org",
+                "Muslims for Britain",
+                "The In Crowd"
+            ]
+        },
+        "RegisterName": {
+            "type": "string",
+            "allowed_values": [
+                "Great Britain",
+                "Northern Ireland"
+            ]
+        },
+        "IsIrishSource": {
+            "type": "bool",
+            "min": false,
+            "max": true
+        }
+    }
+}
